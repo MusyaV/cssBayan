@@ -10,7 +10,6 @@ section {
   border-radius: 15px;
   margin: 0px auto;
   overflow: hidden;
-
 }
 hr {
   color: rgb(63, 63, 63);
@@ -22,35 +21,64 @@ h1 {
   font-weight: bold;
   font-size: 30px;
 }
-img {
-  width: 50%;
-  margin: 10px;
-  border: 4px solid orange;
-  border-radius: 15px;
-}
 label {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  cursor: pointer;
+  user-select: none;
   font-weight: bold;
   font-size: 20px;
-  width: 60%;
-  cursor: pointer;
+  padding: 5px;
+  height: auto;
 }
-#container:hover label::after{
-    content: '\271A';
-    position: absolute;
-    right: 0px;
-    font-size: 30px;
-      top: 0px;
-}
-
-.flex {
-  display: flex;
+.item {
   position: relative;
+  min-height: 75px;
 }
-git article {
-  text-align: center;
+input {
+  display: none;
+}
+section:hover input:checked + label::after {
+  content: "\2716";
+  position: absolute;
+  right: -20px;
+  font-size: 25px;
+  top: 10px;
+}
+section:hover input:not(:checked) + label::after{
+  content: "\271A";
+  position: absolute;
+  right: -20px;
+  font-size: 30px;
+  top: 10pxgi;
+  font-weight: normal;
+}
+.item:hover input:not(:checked) + label::after{
+    content: "\2716";
+}
+input:checked + label > img {
+  height: 100%;
+}
+input:not(:checked) + label > img {
+  border: none;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.8s;
+  border: 4px solid orange;
+  -webkit-transition: 0.3s ease-in-out; 
+  -moz-transition: 0.3s ease-in-out; 
+  -o-transition: 0.3s ease-in-out;
+}
+.item:hover img {
+  height: 100%;
+  opacity: 1;
+}
+img {
+  width: 50%;
+  border: 4px solid orange;
+  border-radius: 15px;
+  display: block;
+  margin: 0px auto;
+  margin-top: 15px;
   overflow: hidden;
-}
-input{
-    display: none;
 }
