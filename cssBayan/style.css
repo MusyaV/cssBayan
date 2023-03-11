@@ -9,9 +9,12 @@ section {
   padding: 5px 100px;
   border-radius: 15px;
   margin: 0px auto;
+  overflow: hidden;
+
 }
 hr {
   color: rgb(63, 63, 63);
+  margin: 0px;
 }
 h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,24 +31,26 @@ img {
 label {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  font-size: 20px;
   width: 60%;
+  cursor: pointer;
 }
-span {
-  position: absolute;
-  right: 0px;
-  font-size: 30px;
-  color: rgb(70, 69, 69);
-  top: 0px;
-  display: none;
-}
-#container:hover span {
-  display: block;
+#container:hover label::after{
+    content: '\271A';
+    position: absolute;
+    right: 0px;
+    font-size: 30px;
+      top: 0px;
 }
 
 .flex {
   display: flex;
   position: relative;
 }
-article {
+git article {
   text-align: center;
+  overflow: hidden;
+}
+input{
+    display: none;
 }
