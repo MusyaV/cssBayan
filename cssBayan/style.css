@@ -31,6 +31,9 @@ label {
   padding: 5px;
   height: auto;
 }
+input:not(:checked) + label {
+color: blue;
+}
 .item {
   position: relative;
   min-height: 75px;
@@ -45,16 +48,19 @@ section:hover input:checked + label::after {
   font-size: 25px;
   top: 10px;
 }
-section:hover input:not(:checked) + label::after{
+section:hover input:not(:checked) + label{
+    color: black;
+}
+section:hover input:not(:checked) + label::after {
   content: "\271A";
   position: absolute;
   right: -20px;
   font-size: 30px;
-  top: 10pxgi;
+  top: 10px;
   font-weight: normal;
 }
-.item:hover input:not(:checked) + label::after{
-    content: "\2716";
+.item:hover input:not(:checked) + label::after {
+  content: "\2716";
 }
 input:checked + label > img {
   height: 100%;
@@ -65,8 +71,8 @@ input:not(:checked) + label > img {
   opacity: 0;
   transition: opacity 0.8s;
   border: 4px solid orange;
-  -webkit-transition: 0.3s ease-in-out; 
-  -moz-transition: 0.3s ease-in-out; 
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
 }
 .item:hover img {
